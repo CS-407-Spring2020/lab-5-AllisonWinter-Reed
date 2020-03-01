@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    private void loginClick(View view) {
+    public void loginClick(View view) {
         EditText username = (EditText) findViewById(R.id.username);
         String userStr = username.getText().toString();
 
