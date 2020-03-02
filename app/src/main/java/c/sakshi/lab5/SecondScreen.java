@@ -38,7 +38,6 @@ public class SecondScreen extends AppCompatActivity {
         Context context = getApplicationContext();
         SQLiteDatabase sqLiteDatabase = context.openOrCreateDatabase("notes", Context.MODE_PRIVATE, null);
 
-
         DBHelper sqlHelp = new DBHelper(sqLiteDatabase);
 
         notes = sqlHelp.readNotes(username);
@@ -51,7 +50,7 @@ public class SecondScreen extends AppCompatActivity {
         }
 
         //Use listview to display notes on the screen
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, displayNotes);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayNotes);
         ListView listView = (ListView) findViewById(R.id.notesList);
         listView.setAdapter(adapter);
 
@@ -66,7 +65,6 @@ public class SecondScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -94,6 +92,4 @@ public class SecondScreen extends AppCompatActivity {
     }
 
     public static ArrayList<Note> notes = new ArrayList<>();
-
-
 }
